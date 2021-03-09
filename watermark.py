@@ -42,6 +42,7 @@ if not os.path.exists(output) or not os.path.isdir(output):
 
 print('[*] Starting!')
 print('[*] Author: X3NNY')
+print('[*] GitHUB: https://github.com/X3NNY/watermark')
 
 class config_class:
     def __init__(self):

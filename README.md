@@ -11,6 +11,27 @@
     ```
 ## Usage
 
+* `python watermark.py -h`
+    
+    ```bash
+    usage: watermark.py [-h] -p PATH [-d DEPTH] [-o OUTPUT] [-k] [-s SUFFIX] [watermark]
+
+    Watermark for PDF
+
+    positional arguments:
+    watermark
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    -p PATH, --path PATH  Add all if path is a directory
+    -d DEPTH, --depth DEPTH
+                            The traversal depth（default 1）
+    -o OUTPUT, --outpt OUTPUT
+                            The ouput path of watermark file (default .)
+    -k, --keep-structure  Keep the folder structure if exists
+    -s SUFFIX, --suffix SUFFIX
+    ```
+
 * `python watermark.py Hello -p ./test.pdf`
 
     Add a watermark `Hello` to `./test.pdf`, Create a file named `./test-水印.pdf`, if u want to change the filename suffix, plz use option `-s` or `--suffix` to specify suffix(default `-水印`). 
@@ -58,6 +79,10 @@
 * `python watermark.py Hello -p ./a -o @ -d 5 -k`
 
     The output path can be `@`, we use it to represent the input file path. So this way we can generate the watermark file in the original location.
+
+## EG
+
+
 
 ## Feature
 
