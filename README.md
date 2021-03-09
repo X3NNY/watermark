@@ -82,7 +82,8 @@
 
 ## EG
 
-
+![shell](./pic/1.png)
+![result](pic/2.png)
 
 ## Feature
 
