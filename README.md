@@ -40,7 +40,7 @@
 
     Add a watermark `Hello` to every file in the directory `./`
 
-    Attention, it will not add a watermark to the files in the sub-directory, if u want, plz use option `-d` or `--depth` to specify the traversal depth.
+    Attention, it won't add a watermark to the files in the sub-directory, if u want, plz use option `-d` or `--depth` to specify the traversal depth.
 
 * `python watermark.py Hello -p ./a -o ./b`
 
@@ -74,11 +74,11 @@
     -> ./b/b/b-水印.pdf
     ```
 
-    As u see, it will automatically create a directory structure(unless u don't permission)
+    As u can see, it will automatically create a directory structure(unless u don't have permission)
 
 * `python watermark.py Hello -p ./a -o @ -d 5 -k`
 
-    The output path can be `@`, we use it to represent the input file path. So this way we can generate the watermark file in the original location.
+    The output path can be `@`, we use it to represent the input file path. So this way can generate the watermark file in the original location.
 
 ## EG
 
@@ -87,6 +87,6 @@
 
 ## Feature
 
-* The sad thing is that now only supports ascii characters or Chinese on MAC, for other UNICODE characters maybe supported in the near future.XD.
+* The sad thing is that now only supports ascii characters or Chinese on (MAC, Windows), for other UNICODE characters maybe supported in the near future.XD.
 
 * More convenient functions will come later...

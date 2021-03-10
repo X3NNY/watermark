@@ -1,5 +1,6 @@
 # -*- coding: utf-8
 import reportlab.pdfbase.ttfonts
+import platform
 import argparse
 import PyPDF2
 import sys
@@ -8,6 +9,10 @@ import os
 from reportlab.lib.units import cm
 from reportlab.pdfgen import canvas
 
+# Windows
+# Darwin
+# Linux
+system = platform.system()
 
 parser = argparse.ArgumentParser(description="Watermark for PDF")
 parser.add_argument('watermark', metavar='watermark', type=str, nargs='?', default='Powered By X3NNY')
@@ -72,9 +77,14 @@ def gen_watermark_pdf(wm: str, config: config_class):
     c = canvas.Canvas(file_name, pagesize=(config.width*cm, config.height*cm))
     c.translate(10*cm, 0*cm)
 
+    if system == 'Darwin':
+        font_path = '/System/Library/Fonts/STHeiti Medium.ttc'
+    elif system == 'Windows':
+        font_path = 'C:/Windows/Fonts/simhei.ttf'
+
     try:
         reportlab.pdfbase.pdfmetrics.registerFont(
-            reportlab.pdfbase.ttfonts.TTFont('heiti', '/System/Library/Fonts/STHeiti Medium.ttc')
+            reportlab.pdfbase.ttfonts.TTFont('heiti', font_path)
         )
         c.setFont('heiti', config.font_size)
     except:
