@@ -31,7 +31,7 @@ wm: str = args.watermark
 is_file: bool = os.path.isfile(path)
 depth: int = args.depth
 output: str = os.getcwd() if args.output is None else (args.output if args.output != '@' else (os.path.dirname(path) if is_file else path))
-suffix: str = args.suffix
+suffix: str = '' if args.suffix == '@' else args.suffix
 ks = args.ks
 
 sc = 0
